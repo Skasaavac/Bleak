@@ -16,6 +16,15 @@ public class ModItems {
     public static final RegistryObject<Item> DARKNESS_CONCENTRATE = ITEMS.register("darkness_concentrate",
             ()-> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> CORN_COB = ITEMS.register("corn_cob",
+            ()->  new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MUD_SLUG = ITEMS.register("mud_slug",
+            ()->  new Item(new Item.Properties()));
+    public static final RegistryObject<Item> STEAMED_SLUG = ITEMS.register("steamed_slug",
+            ()->  new Item(new Item.Properties()));
+
+
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

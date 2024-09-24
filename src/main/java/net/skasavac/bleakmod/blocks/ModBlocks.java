@@ -12,7 +12,6 @@ import net.minecraftforge.registries.RegistryObject;
 import net.skasavac.bleakmod.Bleak;
 import net.skasavac.bleakmod.items.ModItems;
 
-import javax.swing.plaf.basic.BasicLookAndFeel;
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -26,6 +25,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> COBBLED_BLEAKROCK = registerBlock("cobbled_bleakrock",
             ()-> new Block(BlockBehaviour.Properties.of()
                     .strength(4F).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
+
+    public static final RegistryObject<Block> DARKENED_SAND = registerBlock("darkened_sand",
+            ()-> new Block(BlockBehaviour.Properties.of()
+                    .strength(2F).sound(SoundType.MUDDY_MANGROVE_ROOTS)));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

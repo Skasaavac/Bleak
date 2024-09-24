@@ -1,7 +1,6 @@
 package net.skasavac.bleakmod;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -56,10 +55,18 @@ public class Bleak
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == ModCreativeModeTabs.Bleak_Tab.getKey()) {
+            //items
             event.accept(ModItems.DARKNESS);
             event.accept(ModItems.DARKNESS_CONCENTRATE);
+            //food
+            event.accept(ModItems.CORN_COB);
+            event.accept(ModItems.MUD_SLUG);
+            event.accept(ModItems.STEAMED_SLUG);
+            //blocks
             event.accept(ModBlocks.DARKNESS_BLOCK);
             event.accept(ModBlocks.COBBLED_BLEAKROCK);
+            event.accept(ModBlocks.DARKENED_SAND);
+
         }
 
     }
