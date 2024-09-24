@@ -1,6 +1,7 @@
 package net.skasavac.bleakmod;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -13,6 +14,9 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.skasavac.bleakmod.blocks.ModBlocks;
+import net.skasavac.bleakmod.items.ModCreativeModeTabs;
+import net.skasavac.bleakmod.items.ModItems;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -34,8 +38,9 @@ public class Bleak
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-
-
+        ModCreativeModeTabs.register(modEventBus);
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -50,6 +55,12 @@ public class Bleak
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == ModCreativeModeTabs.Bleak_Tab.getKey()) {
+            event.accept(ModItems.DARKNESS);
+            event.accept(ModItems.DARKNESS_CONCENTRATE);
+            event.accept(ModBlocks.DARKNESS_BLOCK);
+            event.accept(ModBlocks.COBBLED_BLEAKROCK);
+        }
 
     }
 
