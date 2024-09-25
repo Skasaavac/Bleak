@@ -17,11 +17,11 @@ public class ModItems {
             ()-> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> CORN_COB = ITEMS.register("corn_cob",
-            ()->  new Item(new Item.Properties()));
+            ()->  new Item(new Item.Properties().food(ModFoods.CORN_COB)));
     public static final RegistryObject<Item> MUD_SLUG = ITEMS.register("mud_slug",
-            ()->  new Item(new Item.Properties()));
-    public static final RegistryObject<Item> STEAMED_SLUG = ITEMS.register("steamed_slug",
-            ()->  new Item(new Item.Properties()));
+            ()->  new Item(new Item.Properties().food(ModFoods.MUD_SLUG)));
+    public static final RegistryObject<Item> GRILLED_SLUG = ITEMS.register("steamed_slug",
+            ()->  new Item(new Item.Properties().food(ModFoods.GRILLED_SLUG)));
 
 
 

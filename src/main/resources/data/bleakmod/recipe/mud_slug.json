@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "bleakmod:block_of_slugs"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id" : "bleakmod:mud_slug"
+  }
+}

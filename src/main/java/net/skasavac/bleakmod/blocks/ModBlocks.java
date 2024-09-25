@@ -1,8 +1,10 @@
 package net.skasavac.bleakmod.blocks;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,15 +22,24 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> DARKNESS_BLOCK = registerBlock("darkness_block",
             ()-> new Block(BlockBehaviour.Properties.of()
-                    .strength(2F).sound(SoundType.FROGSPAWN)));
+                    .strength(2F).sound(SoundType.MUDDY_MANGROVE_ROOTS)));
 
     public static final RegistryObject<Block> COBBLED_BLEAKROCK = registerBlock("cobbled_bleakrock",
             ()-> new Block(BlockBehaviour.Properties.of()
                     .strength(4F).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
 
     public static final RegistryObject<Block> DARKENED_SAND = registerBlock("darkened_sand",
+            ()-> new FallingBlock(BlockBehaviour.Properties.of()
+                    .strength(2F).sound(SoundType.MUDDY_MANGROVE_ROOTS)) {
+                @Override
+                protected MapCodec<? extends FallingBlock> codec() {
+                    return null;
+                }
+            });
+
+    public static final RegistryObject<Block> BLOCK_OF_SLUGS = registerBlock("block_of_slugs",
             ()-> new Block(BlockBehaviour.Properties.of()
-                    .strength(2F).sound(SoundType.MUDDY_MANGROVE_ROOTS)));
+                    .strength(1F).sound(SoundType.FROGSPAWN)));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
