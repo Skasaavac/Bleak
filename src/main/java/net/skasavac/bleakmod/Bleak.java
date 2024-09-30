@@ -62,11 +62,14 @@ public class Bleak
             event.accept(ModItems.CORN_COB);
             event.accept(ModItems.MUD_SLUG);
             event.accept(ModItems.GRILLED_SLUG);
+            event.accept(ModItems.WINE_BOTTLE);
+            event.accept(ModItems.DARK_STEW);
             //blocks
             event.accept(ModBlocks.DARKNESS_BLOCK);
             event.accept(ModBlocks.COBBLED_BLEAKROCK);
             event.accept(ModBlocks.DARKENED_SAND);
             event.accept(ModBlocks.BLOCK_OF_SLUGS);
+            event.accept(ModBlocks.OCEAN_MUD);
 
         }
 

@@ -5,6 +5,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FallingBlock;
+import net.minecraft.world.level.block.PowderSnowBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -12,6 +13,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.skasavac.bleakmod.Bleak;
+import net.skasavac.bleakmod.blocks.special.OceanMudBlock;
+import net.skasavac.bleakmod.blocks.special.SlugBlock;
 import net.skasavac.bleakmod.items.ModItems;
 
 import java.util.function.Supplier;
@@ -30,7 +33,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> DARKENED_SAND = registerBlock("darkened_sand",
             ()-> new FallingBlock(BlockBehaviour.Properties.of()
-                    .strength(2F).sound(SoundType.MUDDY_MANGROVE_ROOTS)) {
+                    .strength(0.6F).sound(SoundType.MUDDY_MANGROVE_ROOTS)) {
                 @Override
                 protected MapCodec<? extends FallingBlock> codec() {
                     return null;
@@ -38,8 +41,14 @@ public class ModBlocks {
             });
 
     public static final RegistryObject<Block> BLOCK_OF_SLUGS = registerBlock("block_of_slugs",
-            ()-> new Block(BlockBehaviour.Properties.of()
-                    .strength(1F).sound(SoundType.FROGSPAWN)));
+            ()-> new SlugBlock(BlockBehaviour.Properties.of()
+                    .strength(1F).sound(SoundType.FROGSPAWN).speedFactor(0.1F)));
+
+    public static final RegistryObject<Block> OCEAN_MUD = registerBlock("ocean_mud",
+            ()-> new OceanMudBlock(BlockBehaviour.Properties.of()
+                    .strength(1F).sound(SoundType.MUD).speedFactor(0.7F)));
+
+
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

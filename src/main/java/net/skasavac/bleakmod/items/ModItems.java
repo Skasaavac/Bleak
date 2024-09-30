@@ -6,6 +6,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.skasavac.bleakmod.Bleak;
+import net.skasavac.bleakmod.items.custom.WineBottleClass;
+
+import javax.swing.plaf.PanelUI;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -22,6 +25,10 @@ public class ModItems {
             ()->  new Item(new Item.Properties().food(ModFoods.MUD_SLUG)));
     public static final RegistryObject<Item> GRILLED_SLUG = ITEMS.register("steamed_slug",
             ()->  new Item(new Item.Properties().food(ModFoods.GRILLED_SLUG)));
+    public static final RegistryObject<Item> WINE_BOTTLE = ITEMS.register("wine_bottle",
+            ()->  new WineBottleClass(new Item.Properties().stacksTo(16).food(ModFoods.WINE_BOTTLE)));
+    public static final RegistryObject<Item> DARK_STEW = ITEMS.register("dark_stew",
+            ()-> new Item(new Item.Properties().stacksTo(1).food(ModFoods.DARK_STEW)));
 
 
 

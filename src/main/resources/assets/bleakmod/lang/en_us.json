@@ -5,11 +5,14 @@
   "item.bleakmod.corn_cob": "Corn on the cob",
   "item.bleakmod.mud_slug": "Mud Slug",
   "item.bleakmod.steamed_slug": "Grilled Slug",
+  "item.bleakmod.wine_bottle": "Wine Bottle",
+  "item.bleakmod.dark_stew": "Dark Stew",
 
   "block.bleakmod.darkness_block": "Darkness Block",
   "block.bleakmod.cobbled_bleakrock": "Cobbled Bleakrock",
   "block.bleakmod.darkened_sand": "Darkened Sand",
   "block.bleakmod.block_of_slugs": "Block of Slugs",
+  "block.bleakmod.ocean_mud": "Ocean Mud",
 
   "creativetab.bleakmod.bleak_tab": "The Bleak"
 }
